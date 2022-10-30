@@ -14,5 +14,5 @@ const postSendEmail = async (req, res) => {
 };
 
 module.exports = {
-    postSendEmail
+    postSendEmail,
 }

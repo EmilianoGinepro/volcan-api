@@ -1,13 +1,13 @@
 const express = require('express');
 var cors = require('cors');
-const v1EmailRouter = require("./v1/routes/emailRoutes");
+const v1Router = require("./v1/routes/routes");
 const { PORT } = require("./config/config");
 
 const app = express();
 
 app.use(express.json());
 app.use(cors());
-app.use("/api/v1/email", v1EmailRouter);
+app.use("/api/v1/", v1Router);
 
 
 app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));

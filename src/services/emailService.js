@@ -1,7 +1,6 @@
 const { EMAIL_USER } = require('../config/config');
 const { transporter } = require('../config/emailConfig');
 
-
 const postSendEmail = async (nombre, empresa, email, opcion, textarea) => {
     try {
         const mailOption = {
@@ -21,7 +20,7 @@ const postSendEmail = async (nombre, empresa, email, opcion, textarea) => {
     } catch (err) {
         return res.status(404).send(err);
     }
-}
+};
 
 module.exports = {
     postSendEmail
