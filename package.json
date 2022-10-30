@@ -1,0 +1,29 @@
+{
+  "name": "volcan-api",
+  "version": "1.0.0",
+  "description": "api de web volcan-productora",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmilianoGinepro/volcan-api.git"
+  },
+  "author": "Emiliano Ginepro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EmilianoGinepro/volcan-api/issues"
+  },
+  "homepage": "https://github.com/EmilianoGinepro/volcan-api#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "nodemailer": "^6.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
