@@ -1,7 +1,7 @@
 const express = require('express');
 var cors = require('cors');
 const v1Router = require("./v1/routes/routes");
-const { PORT } = require("./config/config");
+const { PORT } = require("./config/variablesConfig");
 
 const app = express();
 

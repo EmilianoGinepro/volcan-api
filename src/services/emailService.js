@@ -1,4 +1,4 @@
-const { EMAIL_USER } = require('../config/config');
+const { EMAIL_USER } = require('../config/variablesConfig');
 const { transporter } = require('../config/emailConfig');
 
 const postSendEmail = async (nombre, empresa, email, opcion, textarea) => {
