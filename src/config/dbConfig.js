@@ -1,5 +1,4 @@
 const admin = require('firebase-admin');
-//const serviceAccount = require('../../volcan-dev-firebase-adminsdk-4ydbs-c2c6dc005c.json')
 const {
   URL_DB,
   FIREBASE_TYPE,
@@ -28,7 +27,7 @@ const {
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: URL_DB //'https://volcan-dev-default-rtdb.firebaseio.com'
+    databaseURL: URL_DB
 });
 
 const db = admin.database();
