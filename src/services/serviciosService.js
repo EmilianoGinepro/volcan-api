@@ -1,16 +1,19 @@
 const { db } = require('../config/dbConfig')
 
+
 const getServicios = async (req, res) => {
     try {
-          /*  const serv = await db.ref('servicio').once('value', (snapshot) => {
-            snapshot.val();
-        }); */
-        const servicioRef = db.ref('servicio')
-        const data = await servicioRef.get()
-        return data
+     const snapshot = await db.collection('servicio').get();
+        return snapshot.docs.map(doc => ({
+            id: doc.id,
+            modal: doc.data().modal,
+            texto: doc.data().texto,
+            titulo: doc.data().titulo
+        }))
     } catch (err) {
-        return res.status(404).send(err);
+         return res.status(404).send(err);
     };
+
 };
 
 module.exports = {

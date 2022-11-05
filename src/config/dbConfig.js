@@ -1,4 +1,5 @@
-const admin = require('firebase-admin');
+/* const admin = require('firebase-admin');
+
 const {
   URL_DB,
   FIREBASE_TYPE,
@@ -25,11 +26,33 @@ const {
   "client_x509_cert_url": FIREBASE_CLIENT_X509_CERT_URL
 }
 
-admin.initializeApp({
+const firebaseConfig = {
+  apiKey: "AIzaSyBpcIoiSPitNrS-OY3NCstKCeKTtbRMEBs",
+  authDomain: "volcan-desarrollo.firebaseapp.com",
+  projectId: "volcan-desarrollo",
+  storageBucket: "volcan-desarrollo.appspot.com",
+  messagingSenderId: "1059874294461",
+  appId: "1:1059874294461:web:9fa4c7e07788622df285d4"
+};
+
+/* admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
     databaseURL: URL_DB
-});
+}); */
+/*
+admin.initializeApp(firebaseConfig)
 
 const db = admin.database();
+*/
+const { initializeApp, applicationDefault, cert } = require('firebase-admin/app');
+const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');
+
+const serviceAccount = require('../../volcan-dev-firebase-adminsdk-4ydbs-fa396ca6e9.json');
+
+initializeApp({
+  credential: cert(serviceAccount)
+});
+
+const db = getFirestore();
 
 module.exports = { db };
