@@ -6,9 +6,7 @@ const getServicios = async (req, res) => {
      const snapshot = await db.collection('servicio').get();
         return snapshot.docs.map(doc => ({
             id: doc.id,
-            modal: doc.data().modal,
-            texto: doc.data().texto,
-            titulo: doc.data().titulo
+            ...doc.data()
         }))
     } catch (err) {
          return res.status(404).send(err);
